@@ -8,12 +8,21 @@ import { TutorialPageRoutingModule } from './tutorial-routing.module';
 
 import { TutorialPage } from './tutorial.page';
 
+import { MatCardModule } from '@angular/material/card'; 
+import { MatButtonModule } from '@angular/material/button'; // Importa MatButtonModule
+import { MatDividerModule } from '@angular/material/divider'; // Importa MatDividerModule
+import { MatIconModule } from '@angular/material/icon'; // Importa MatIconModule
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TutorialPageRoutingModule
+    TutorialPageRoutingModule,
+    MatCardModule, // Agrega MatCardModule
+    MatButtonModule, // Agrega MatButtonModule
+    MatDividerModule, // Agrega MatDividerModule
+    MatIconModule // Agrega MatIconModule
   ],
   declarations: [TutorialPage]
 })

@@ -1,13 +1,52 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <!--**Titulo -->
+    <ion-title class="ion-text-center">MindMatch: 2.0</ion-title>
+     <!--**LOGO: Cree una clase llamada "logo" para disminuir su tamaño en el scss-->
+    <img src="assets/img/logomindmatch.png" alt="Logo de la aplicación" class="logo">
+
+    <!--**BIBLIOTECA FONT AWESOME PARA LOS ICONOS DE REDES-->
+    <!--!Pendientes los iconos + el footer-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">login</ion-title>
+      <ion-title size="large">Login: version 2</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <!-- CAMPOS PARA RELLENAR -->
+  
+  <!-- usuario -->
+  <ion-item>
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input class="input-rosa" type="text" minlength="4" maxlength="10" placeholder="Ingrese su usuario" [(ngModel)]="usuario" pattern="[a-zA-Z0-9]*"></ion-input>
+  </ion-item>
+
+  <!-- contrasena -->
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input class="input-rosa" type="password" placeholder="Ingrese su contraseña" [(ngModel)]="contrasena" pattern="^[0-9]{4}$" maxlength="10"></ion-input>
+  </ion-item>
+
+  <!-- Boton que lleva al home -->
+  <ion-button class="boton-morado" routerLink="/home">Ingresar</ion-button>
+  <ion-button class="boton-morado" routerLink="/adminhome">Ingresar como Administrador</ion-button>
+  <ion-button fill="clear" routerLink="/register">¿No tienes cuenta? Regístrate aquí</ion-button>
+
+  <!-- Circulo que gira de Angular Material-->
+  <mat-spinner></mat-spinner>
+
+
+   <!-- **FOOTER  -->
+
+<ion-content style="display: flex; flex-direction: column; min-height: 100vh;">
+  <!-- Aquí va el contenido principal de la página -->
+
+
 </ion-content>

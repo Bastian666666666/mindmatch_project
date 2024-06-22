@@ -12,4 +12,8 @@ export class EvPage implements OnInit {
   ngOnInit() {
   }
 
+  
+
 }
+
+

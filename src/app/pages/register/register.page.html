@@ -1,13 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <!--**Titulo -->
+    <ion-title class="ion-text-center">MindMatch</ion-title>
+    <!--**LOGO -->
+    <img src="assets/img/logomindmatch.png" alt="Logo de la aplicación" class="logo">
+    <!--**BIBLIOTECA FONT AWESOME PARA LOS ICONOS DE REDES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">register</ion-title>
+      <ion-title size="large">Registro</ion-title>
     </ion-toolbar>
   </ion-header>
-</ion-content>
+
+<!-- Formulario de registro -->
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+  <input type="text" name="username" ngModel required placeholder="Username">
+  <input type="password" name="password" ngModel required placeholder="Password">
+  <input type="text" name="nombre" ngModel required placeholder="Nombre">
+  <input type="text" name="apellido" ngModel required placeholder="Apellido">
+  <input type="text" name="nacimiento" ngModel required placeholder="Nacimiento">
+
+  <button type="submit" [disabled]="!registerForm.valid">Registrar</button>
+</form>
