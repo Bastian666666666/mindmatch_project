@@ -1,0 +1,7 @@
+{
+  "name": "mindmatch.v2.0",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
