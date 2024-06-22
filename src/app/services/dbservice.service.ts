@@ -31,14 +31,41 @@ export class DbserviceService {
   }
 
   //4. Esto es una función que agregará un usuario a la base de datos tomando como parámetros el username, la contraseña, el nombre, el apellido y la fecha de nacimiento y los insertará en usuario
-  addUsuario(username: string,password: string,nombre: string,apellido: string,nacimiento: string){
-    let data=[username, password, nombre, apellido, nacimiento];
-    return this.database.executeSql('INSERT INTO usuario(username, password, nombre, apellido, nacimiento) VALUES(?, ?, ?, ?, ?)',data)
-    .then(res =>{
-      this.buscarUsuarios();
-    })
-
+  //Se perfecciono este metodo para que verifique si existe un usuario con el mismo nombre de usuario, si existe, no lo inserta y muestra un mensaje de error.
+  addUsuario(username: string, password: string, nombre: string, apellido: string, nacimiento: string) {
+    // Primero, verifica si el username ya existe
+    return this.database.executeSql('SELECT * FROM usuario WHERE username = ?', [username])
+      .then(res => {
+        if (res.rows.length > 0) {
+          // Si ya existe un usuario con ese username, muestra un mensaje y detén la ejecución
+          this.presentToast('El nombre de usuario ya existe. Por favor, elija otro.');
+          return Promise.reject('El nombre de usuario ya existe.'); // Detiene la ejecución y evita la inserción
+        } else {
+          // Si el username no existe, intenta insertar el nuevo usuario
+          let data = [username, password, nombre, apellido, nacimiento];
+          return this.database.executeSql('INSERT INTO usuario(username, password, nombre, apellido, nacimiento) VALUES(?, ?, ?, ?, ?)', data)
+            .then(() => {
+              this.buscarUsuarios(); // Actualiza la lista de usuarios
+              this.presentToast('Registro exitoso.');
+            })
+            .catch(error => {
+              // Aquí capturas el error de violación de la restricción UNIQUE, si ocurre
+              // El manejo específico del error dependerá del código de error que SQLite devuelve
+              // Este es un manejo genérico de error
+              this.presentToast('Error al agregar usuario: ' + error.message);
+              return Promise.reject(error);
+            });
+        }
+      })
+      .catch(error => {
+        // Manejo de errores generales de la consulta
+        this.presentToast('Error al verificar el nombre de usuario: ' + error.message);
+        return Promise.reject(error);
+      });
   }
+
+
+
   
   //4. Esto es una función que actualizará un usuario en la base de datos tomando como parámetros el username, la contraseña, el nombre, el apellido y la fecha de nacimiento y los actualizará en usuario
   updateUsuario(id: number, username: string,password: string,nombre: string,apellido: string,nacimiento: string){
