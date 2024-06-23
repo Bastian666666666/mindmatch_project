@@ -52,7 +52,11 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'not-found'
+  },  {
+    path: 'micuenta',
+    loadChildren: () => import('./pages/micuenta/micuenta.module').then( m => m.MicuentaPageModule)
   },
+
   
 
 
