@@ -1,33 +1,40 @@
-<ion-buttons slot="end" class="boton-salir">
-  <ion-button (click)="logout()">
-    <ion-icon name="exit-outline"></ion-icon>
-    Cerrar sesión
-  </ion-button>
-</ion-buttons>
+  <ion-buttons slot="end" class="boton-salir">
+    <ion-button (click)="logout()">
+      <ion-icon name="exit-outline"></ion-icon>
+      Cerrar sesión
+    </ion-button>
+  </ion-buttons>
 
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      <span class="titulo-tamaño">Bienvenido a MindMatch</span> 
-      <p>Bienvenido, {{username}}</p>
-    </ion-title>
-    
-    <img src="assets/img/logomindmatch.png" alt="Logo de la aplicación" class="logo">
-  </ion-toolbar>
-</ion-header>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        <span class="titulo-tamaño">Bienvenido a MindMatch</span>
+        <p>Bienvenido, {{username}}</p>
+      </ion-title>
 
-<ion-content [fullscreen]="true">
+      <img src="assets/img/logomindmatch.png" alt="Logo de la aplicación" class="logo">
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-label class="texto-pregunta" position="stacked">Label de prueba</ion-label>
+
+  <!-- Este es el contenido de la página de evaluación -->
+
+
+<ion-label class="texto-pregunta" position="stacked">2 de prueba</ion-label>
+
   <ion-list>
     <ion-item>
       <ion-label class="texto-pregunta" position="stacked">¿Cuál es la edad de la persona?</ion-label>
       <ion-input class="input-rosa" type="number" [(ngModel)]="edad" maxlength="2"></ion-input>
     </ion-item>
-
+ <!--
     <ion-item>
       <ion-label>A. ¿Se ha sentido excesivamente ansioso y preocupado por muchas cosas diferentes, como el trabajo o la escuela, durante la mayor parte de los últimos seis meses?</ion-label>
       <ion-checkbox class="checkbox-naranja" slot="start" [(ngModel)]="opcionA"></ion-checkbox>
     </ion-item>
   </ion-list>
+
 
   <ion-item>
     <ion-label>B. En caso afirmativo a la pregunta anterior, ¿Le ha resultado difícil controlar esa preocupación constante?</ion-label>
@@ -44,27 +51,27 @@
     <ion-label>1. ¿Se ha sentido inquieto/a, atrapado/a o con los nervios de punta?</ion-label>
     <ion-checkbox class="checkbox-naranja" slot="start" [(ngModel)]="opcion1"></ion-checkbox>
   </ion-item>
-  
+
   <ion-item>
     <ion-label>2. ¿Se ha sentido fácilmente cansado/a o fatigado/a?</ion-label>
     <ion-checkbox class="checkbox-naranja" slot="start" [(ngModel)]="opcion2"></ion-checkbox>
   </ion-item>
-  
+
   <ion-item>
     <ion-label>3. ¿Ha tenido problemas para concentrarte o te has quedado en blanco con frecuencia?</ion-label>
     <ion-checkbox class="checkbox-naranja" slot="start" [(ngModel)]="opcion3"></ion-checkbox>
   </ion-item>
-  
+
   <ion-item>
     <ion-label>4. ¿Se ha sentido irritable con frecuencia?</ion-label>
     <ion-checkbox class="checkbox-naranja" slot="start" [(ngModel)]="opcion4"></ion-checkbox>
   </ion-item>
-  
+
   <ion-item>
     <ion-label>5. ¿Ha experimentado tensión muscular con regularidad?</ion-label>
     <ion-checkbox class="checkbox-naranja" slot="start" [(ngModel)]="opcion5"></ion-checkbox>
   </ion-item>
-  
+
   <ion-item>
     <ion-label>6. ¿Ha tenido problemas para dormir, como dificultad para conciliar el sueño, despertarte durante la noche o tener un sueño inquieto e insatisfactorio?</ion-label>
     <ion-checkbox class="checkbox-naranja" slot="start" [(ngModel)]="opcion6"></ion-checkbox>
@@ -84,19 +91,11 @@
     <ion-label>F. ¿Estos cambios no pueden ser explicados mejor por otro trastorno mental, como ataques de pánico en el trastorno de pánico, preocupación negativa en el trastorno de ansiedad social, obsesiones en el trastorno obsesivo-compulsivo, entre otros?</ion-label>
     <ion-checkbox class="checkbox-naranja" slot="start" [(ngModel)]="opcionF"></ion-checkbox>
   </ion-item>
+-->
 
-    <!-- Este es el boton que envia los resultados de la edad y CheckBox a la funcion verResultados, que a su vez la envia a la page resultados-->
+  <!-- Este es el boton que envia los resultados de la edad y CheckBox a la funcion verResultados, que a su vez la envia a la page resultados-->
   <ion-button class="boton-morado" (click)="verResultados()">Ver resultados</ion-button>
 
-  <!-- Este es el nuevo botón que lleva al usuario a la página de inicio -->
-  <ion-button class="boton-morado" (click)="irAHome()">Volver atrás</ion-button>
-</ion-content>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">ev</ion-title>
-    </ion-toolbar>
-  </ion-header>
   <ion-button href="/home" expand="block">Volver a Home</ion-button>
-</ion-content>
+
