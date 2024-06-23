@@ -25,6 +25,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/ev/ev.module').then( m => m.EvPageModule)
   },
   {
+    path: 'resultado',
+    loadChildren: () => import('./pages/resultado/resultado.module').then( m => m.ResultadoPageModule)
+  },
+  {
     path: 'not-found',
     loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
@@ -45,11 +49,11 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
-
   {
     path: '**',
     redirectTo: 'not-found'
   },
+  
 
 
 ];
