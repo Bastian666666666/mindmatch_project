@@ -42,7 +42,7 @@ export class EvPage implements OnInit {
   constructor(private dbservice: DbserviceService, private router: Router, private toastController: ToastController) { }
 
   ngOnInit() {
-    this.username = localStorage.getItem('username') || ''; // Recuperar el nombre de usuario
+    this.username = sessionStorage.getItem('username') || ''; // Recuperar el nombre de usuario
   }
 
   logout() {

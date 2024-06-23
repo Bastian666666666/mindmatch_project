@@ -16,9 +16,18 @@ export class TutorialPage implements OnInit {
   @ViewChild(IonCard, { read: ElementRef }) card!: ElementRef<HTMLIonCardElement>;
 private animation!: Animation;
 
+  username: string = "";
+
+
   constructor(private route: ActivatedRoute, private router: Router, private animationCtrl: AnimationController) { }
 
   ngOnInit() {
+    this.username = sessionStorage.getItem('username') || ''; // Recuperar el nombre de usuario
+  }
+
+  logout() {
+    sessionStorage.removeItem('username'); // Eliminar el nombre de usuario de sessionStorage
+    this.router.navigateByUrl('/login'); // Redirigir al usuario a la página de inicio de sesión
   }
 
   ngAfterViewInit() {
