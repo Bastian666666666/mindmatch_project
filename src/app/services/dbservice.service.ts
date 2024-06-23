@@ -31,7 +31,9 @@ export class DbserviceService {
   }
 
   //4. Esto es una función que agregará un usuario a la base de datos tomando como parámetros el username, la contraseña, el nombre, el apellido y la fecha de nacimiento y los insertará en usuario
-  //Se perfecciono este metodo para que verifique si existe un usuario con el mismo nombre de usuario, si existe, no lo inserta y muestra un mensaje de error.
+  //!Se perfecciono este metodo para que verifique si existe un usuario con el mismo nombre de usuario, si existe, no lo inserta y muestra un mensaje de error, pero al parecer el error esta en la parte inicial porque el error que arroja es de unknow desde .catch(error =>  no "El nombre de usuario ya existe.."
+
+
   addUsuario(username: string, password: string, nombre: string, apellido: string, nacimiento: string) {
     // Primero, verifica si el username ya existe
     return this.database.executeSql('SELECT * FROM usuario WHERE username = ?', [username])
@@ -159,5 +161,59 @@ export class DbserviceService {
       toast.present();
     }
 
-  }
+    //! METODO DE LOGIN: LOGIN Y LOGOUT
+    /*
+    // Método de inicio de sesión modificado para manejar token
+    async login(username: string, password: string) {
+      try {
+        // Aquí deberías enviar una solicitud al servidor con username y password
+        // y recibir el token en caso de éxito. Este es un ejemplo simulado.
+        const fakeToken = 'token_simulado_del_servidor';
+        // Guardar el token en localStorage
+        localStorage.setItem('auth_token', fakeToken);
+        this.presentToast('Inicio de sesión exitoso.');
+        return true;
+      } catch (error) {
+        // Verificar si error es una instancia de Error
+        if (error instanceof Error) {
+          this.presentToast('Error al iniciar sesión: ' + error.message);
+        } else {
+          // Manejar casos donde error no es una instancia de Error
+          this.presentToast('Error al iniciar sesión: Se produjo un error desconocido.');
+        }
+        return false;
+      }
+    }
 
+// Método para verificar si el usuario está logueado basado en la presencia del token
+isUserLoggedIn() {
+  return localStorage.getItem('auth_token') != null;
+}
+
+// Método de cierre de sesión
+logout() {
+  localStorage.removeItem('auth_token');
+  this.presentToast('Sesión cerrada.');
+}
+  */
+
+  //TODO Segundo metodo de Login, probando
+
+  validarUsuario(username: string, password: string) {
+    return this.database.executeSql('SELECT * FROM usuario WHERE username = ? AND password = ?', [username, password])
+      .then(res => {
+        if (res.rows.length > 0) {
+  
+          const usuario = res.rows.item(0);
+          this.presentToast(`Bienvenido: ${usuario.username}`); // Usar presentToast en lugar de alert
+          sessionStorage.setItem('username', usuario.username); // Cambiado a sessionStorage
+  
+          return res.rows.item(0); // Devuelve el usuario encontrado
+        } else {
+          return null; // Devuelve null si no se encontró ningún usuario
+        }
+      })
+      .catch(error => this.presentToast('Error al verificar el usuario: ' + error.message));
+  };
+
+}
