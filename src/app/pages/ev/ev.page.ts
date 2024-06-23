@@ -88,7 +88,7 @@ export class EvPage implements OnInit {
     const usuario = sessionStorage.getItem('username');
   
     // Navegar a la página de resultados con el mensaje y el usuario obtenido de SessionStorage
-    this.router.navigate(['/resultados', { mensaje: mensaje, usuario: usuario }]);
+    this.router.navigate(['/resultado', { mensaje: mensaje, usuario: usuario }]);
   }
 
   irAHome() {
