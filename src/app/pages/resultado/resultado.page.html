@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>RESULTADOS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">resultados</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <!--- Botones para activar y desactivar la animacion
+  <ion-button (click)="play()">Play</ion-button>
+  <ion-button (click)="pause()">Pause</ion-button>
+  <ion-button (click)="stop()">Stop</ion-button>
+  -->
+
+  <!-- Aquí es donde se mostrará el mensaje y el usuario -->
+  <ion-card>
+    <ion-card-content>
+      <p>Estimado {{ username }},</p>
+      <p>Me complace informarte sobre los resultados de la evaluación realizada:</p>
+      <p>{{ mensaje }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- **Mensaje e imagen para "invalido300.02" -->
+<ion-card *ngIf="mensaje == 'invalido300.02'">
+  <img alt="Imagen descriptiva" src="assets/img/interrogativo.png" />
+  <ion-card-header>
+    <ion-card-title #cardTitle>No se puede evaluar con los criterios para Trastorno de ansiedad generalizada</ion-card-title>
+<ion-card-subtitle #cardSubtitle>300.02 (F41.1)</ion-card-subtitle>
+
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>Lamentablemente, la evaluación no se pudo completar debido a que la edad del paciente es menor a 5 años, el TAG se diagnostica posterior a esta edad. Es crucial tener en cuenta este factor para llevar a cabo un análisis más exhaustivo y detallado del problema. Te sugiero considerar la derivación del paciente a un profesional especializado en el tratamiento de niños pequeños para una evaluación más precisa y adecuada.</p>
+  </ion-card-content>
+</ion-card>
+
+  <!-- **Mensaje e imagen para "positivo300.02" -->
+  <ion-card *ngIf="mensaje == 'positivo300.02'">
+  <img alt="Imagen descriptiva" src="assets/img/positivo.png" />
+  <ion-card-header>
+    <ion-card-title>Cumple con los criterios para Trastorno de ansiedad generalizada</ion-card-title>
+    <ion-card-subtitle>300.02 (F41.1)</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>El trastorno de ansiedad generalizada (TAG) se caracteriza por una preocupación excesiva que dura al menos seis meses y es difícil de controlar. Junto con esta preocupación persistente, las personas pueden experimentar síntomas físicos y emocionales como inquietud, fatiga, dificultad para concentrarse, irritabilidad y problemas para dormir.</p>
+      
+    <p>Estos síntomas causan malestar significativo y pueden afectar el funcionamiento diario en áreas importantes como el trabajo y las relaciones sociales. El TAG no se debe a drogas, enfermedades o a otros trastornos mentales. El tratamiento generalmente incluye terapia cognitivo-conductual, además de, en algunos casos, medicamentos. Es importante brindar apoyo y tratamiento adecuado para mejorar la calidad de vida del individuo.</p>  
+    
+      
+
+    <blockquote>se preocupan por los “y si…”, añade el Dr. Bubrick.</blockquote>
+    <blockquote>“¿Y si nos quedamos sin gasolina?”.</blockquote>
+    <blockquote>“¿Y si mamá pierde el trabajo?”</blockquote>
+    <blockquote>“¿Y si un huracán se lleva nuestra casa?”.</blockquote>
+    <blockquote>“¿Y si obtengo una mala calificación?”.</blockquote>
+
+    <blockquote>“El peligro es que si el TAG no es tratado, y los niños no aprenden a enfrentar la ansiedad de forma segura y eficaz, puede seguir mermando su funcionamiento”, dice la Dra. Gerber. “Realmente se puede volver algocrónico, y es un fuerte predictor de depresión y otros trastornos más adelante en la vida”.</blockquote>
+    <!-- Boton con Angular Material, primero no sabia por que se veia rosa, despues vi que es porque escogi esos colores al iniciar el proyecto -->
+    <p>Fuente de la cita: <a mat-flat-button color="primary" href="https://childmind.org/es/articulo/trastorno-de-ansiedad-generalizada-en-ninos/" target="_blank">link</a></p>
+    
+    
+  </ion-card-content>
+</ion-card>
+
+<!-- **Mensaje e imagen para "negativo300.02" -->
+<ion-card *ngIf="mensaje == 'negativo300.02'">
+  <img alt="Imagen descriptiva" src="assets/img/negativo.png" />
+  <ion-card-header>
+    <ion-card-title>No cumple con los criterios para Trastorno de ansiedad generalizada</ion-card-title>
+    <ion-card-subtitle>300.02 (F41.1)</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>Basado en las respuestas proporcionadas, parece que el individuo no cumple con los criterios necesarios para el diagnóstico de trastorno de ansiedad generalizada. Sin embargo, es importante considerar que esta evaluación es solo una herramienta inicial y no reemplaza una evaluación completa realizada por un profesional de la salud mental. Te recomendamos que realices una evaluación más exhaustiva para determinar la presencia de cualquier otro trastorno o preocupación subyacente. Si necesitas más información o asistencia, no dudes en ponerte en contacto con nosotros.</p>
+  </ion-card-content>
+</ion-card>
+
+
+<button (click)="goBack()">Ir atrás</button>
+<button (click)="goHome()">Home</button>
