@@ -4,6 +4,13 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-buttons slot="end" class="boton-salir">
+  <ion-button (click)="logout()">
+    <ion-icon name="exit-outline"></ion-icon>
+    Cerrar sesión
+  </ion-button>
+</ion-buttons>
+
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
