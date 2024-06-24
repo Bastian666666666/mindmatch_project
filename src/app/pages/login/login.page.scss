@@ -1,8 +1,13 @@
-
-//Imagen del logo en la pantalla
 .logo {
-    transform: scale(0.5);
-  }
+  max-width: 100px; /* Ajusta esto según sea necesario */
+  height: auto; /* Mantiene la proporción del logo */
+  display: block; /* Centra el logo si es necesario */
+  margin: 0 auto; /* Centra el logo horizontalmente */
+}
+
+ion-content {
+  padding-top: 20px; /* Ajusta el espacio entre el header y el contenido */
+}
 
   //Campos de texto para completar
   ion-input.input-rosa {
