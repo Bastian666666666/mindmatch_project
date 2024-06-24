@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { routeguardGuard } from './services/routeguard.guard';
+import { RouteguardGuard } from 'src/app/services/routeguard.guard'; // Importa aquí
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule),
-    canActivate: [routeguardGuard] // Agrega tu guard aquí
+    canActivate: [RouteguardGuard] // Agrega tu guard aquí
   },
   
   {
@@ -21,47 +21,47 @@ const routes: Routes = [
   {
     path: 'tutorial',
     loadChildren: () => import('./pages/tutorial/tutorial.module').then( m => m.TutorialPageModule),
-    canActivate: [routeguardGuard] //
+    canActivate: [RouteguardGuard] //
   },
   {
     path: 'ev',
     loadChildren: () => import('./pages/ev/ev.module').then( m => m.EvPageModule),
-    canActivate: [routeguardGuard] //
+    canActivate: [RouteguardGuard] //
   },
   {
     path: 'resultado',
     loadChildren: () => import('./pages/resultado/resultado.module').then( m => m.ResultadoPageModule),
-    canActivate: [routeguardGuard] //
+    canActivate: [RouteguardGuard] //
   },
   {
     path: 'not-found',
     loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule),
-    canActivate: [routeguardGuard] //
+    canActivate: [RouteguardGuard] //
   },
   {
     path: 'adminhome',
     loadChildren: () => import('./pages/adminhome/adminhome.module').then( m => m.AdminhomePageModule),
-    canActivate: [routeguardGuard] //
+    canActivate: [RouteguardGuard] //
   },
   {
     path: 'admin-agregar',
     loadChildren: () => import('./pages/admin-agregar/admin-agregar.module').then( m => m.AdminAgregarPageModule),
-    canActivate: [routeguardGuard] //
+    canActivate: [RouteguardGuard] //
   },
   {
     path: 'admin-modificar',
     loadChildren: () => import('./pages/admin-modificar/admin-modificar.module').then( m => m.AdminModificarPageModule),
-    canActivate: [routeguardGuard] //
+    canActivate: [RouteguardGuard] //
   },
   {
     path: 'micuenta',
     loadChildren: () => import('./pages/micuenta/micuenta.module').then( m => m.MicuentaPageModule),
-    canActivate: [routeguardGuard] //
+    canActivate: [RouteguardGuard] //
   },
   {
     path: 'camara',
     loadChildren: () => import('./pages/camara/camara.module').then( m => m.CamaraPageModule),
-    canActivate: [routeguardGuard] //
+    canActivate: [RouteguardGuard] //
   },
   {
     path: '',
@@ -81,3 +81,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
