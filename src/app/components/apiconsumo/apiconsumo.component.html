@@ -1,0 +1,8 @@
+<div *ngIf="lista.length; else noData">
+  <ul>
+    <li *ngFor="let item of lista">{{ item.nombre }}</li> <!-- Asume que cada objeto en 'lista' tiene una propiedad 'nombre' -->
+  </ul>
+</div>
+<ng-template #noData>
+  <p>No hay datos disponibles.</p>
+</ng-template>
