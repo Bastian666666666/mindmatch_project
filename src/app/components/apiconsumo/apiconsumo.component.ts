@@ -17,7 +17,8 @@ export class ApiconsumoComponent implements OnInit {
 
   cargarLista(): void {
     this.apiClientService.getLista().subscribe((data: any) => {
-      this.lista = data;
+      //Aqui llama a la lista de criterios lista_trastornos (el nombre que tiene en el json)
+      this.lista = data.lista_trastornos;
     });
   }
 }

@@ -1,6 +1,11 @@
 <div *ngIf="lista.length; else noData">
   <ul>
-    <li *ngFor="let item of lista">{{ item.nombre }}</li> <!-- Asume que cada objeto en 'lista' tiene una propiedad 'nombre' -->
+    <li *ngFor="let item of lista">
+      <p>ID: {{ item.id }}</p>
+      <p>Nombre: {{ item.nombre }}</p>
+      <p>Código: {{ item.codigo }}</p>
+      <p>Categoría: {{ item.categoria }}</p>
+    </li>
   </ul>
 </div>
 <ng-template #noData>

@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiclientService {
 
-  private apiUrl = 'https://my-json-server.typicode.com/Bastian666666666/api-mindmatch-/Lista';
+  private apiUrl = 'https://my-json-server.typicode.com/Bastian666666666/api-mindmatch-/lista_trastornos';
 
 
   constructor(private http: HttpClient) { }
