@@ -17,12 +17,29 @@
   </ion-header>
 
 <!-- Formulario de registro -->
-<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
-  <input type="text" name="username" ngModel required placeholder="Username">
-  <input type="password" name="password" ngModel required placeholder="Password">
-  <input type="text" name="nombre" ngModel required placeholder="Nombre">
-  <input type="text" name="apellido" ngModel required placeholder="Apellido">
-  <input type="text" name="nacimiento" ngModel required placeholder="Nacimiento">
+<ion-content>
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text" name="username" ngModel required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" name="password" ngModel required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" name="nombre" ngModel required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input type="text" name="apellido" ngModel required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nacimiento</ion-label>
+      <ion-input type="text" name="nacimiento" ngModel required></ion-input>
+    </ion-item>
 
-  <button type="submit" [disabled]="!registerForm.valid">Registrar</button>
-</form>
+    <ion-button type="submit" expand="block" [disabled]="!registerForm.valid">Registrar</ion-button>
+  </form>
+</ion-content>
