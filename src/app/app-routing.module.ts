@@ -45,6 +45,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/admin-modificar/admin-modificar.module').then( m => m.AdminModificarPageModule)
   },
   {
+    path: 'micuenta',
+    loadChildren: () => import('./pages/micuenta/micuenta.module').then( m => m.MicuentaPageModule)
+  },
+  {
+    path: 'camara',
+    loadChildren: () => import('./pages/camara/camara.module').then( m => m.CamaraPageModule)
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
@@ -52,14 +60,7 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'not-found'
-  },  {
-    path: 'micuenta',
-    loadChildren: () => import('./pages/micuenta/micuenta.module').then( m => m.MicuentaPageModule)
   },
-
-  
-
-
 ];
 
 @NgModule({

@@ -1,13 +1,25 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>micuenta</ion-title>
+    <ion-title>
+      <span class="titulo-tamaño">Mi cuenta</span> 
+      <p>Usuario: {{username}}</p>
+    </ion-title>
+    <ion-buttons slot="end" class="boton-salir">
+      <ion-button (click)="logout()">
+        <ion-icon name="exit-outline"></ion-icon>
+        Cerrar sesión
+      </ion-button>
+    </ion-buttons>
+    <!--**LOGO: Cree una clase llamada "logo" para disminuir su tamaño en el scss-->
+    <img src="assets/img/logomindmatch.png" alt="Logo de la aplicación" class="logo">
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">micuenta</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list>
+    <!-- Botón para ir a la cámara -->
+    <ion-button class="boton-morado" expand="full" routerLink="/camara">Ir a la Cámara</ion-button>
+    <!-- Botón para volver a Home -->
+    <ion-button class="boton-morado" expand="full" routerLink="/home">Volver a Home</ion-button>
+  </ion-list>
 </ion-content>
