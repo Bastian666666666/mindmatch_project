@@ -35,4 +35,11 @@ export class CamaraPage implements OnInit {
   this.imageSource = image.dataUrl; //cambie a dataUrl para que se muestre la imagen, le digo que la imagen que se tomo se muestre en la variable imageSource
 };
 
+savePicture = () => {
+  localStorage.setItem('savedImage', this.imageSource); // Cambiar a localStorage
+  alert('Foto guardada correctamente'); // Mostrar confirmación al usuario
+  this.router.navigateByUrl('/micuenta'); // Redirigir al usuario a la página "micuenta"
+};
+
+
 }
