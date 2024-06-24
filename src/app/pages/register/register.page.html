@@ -2,6 +2,8 @@
   <ion-toolbar>
     <!--**Titulo -->
     <ion-title class="ion-text-center">MindMatch</ion-title>
+    <!--**LOGO -->
+    <img src="assets/img/logomindmatch.png" alt="Logo de la aplicación" class="logo">
     <!--**BIBLIOTECA FONT AWESOME PARA LOS ICONOS DE REDES -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </ion-toolbar>
@@ -15,33 +17,12 @@
   </ion-header>
 
 <!-- Formulario de registro -->
-<ion-content>
-  <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
-    <ion-item>
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input type="text" required [(ngModel)]="username" name="username"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" required [(ngModel)]="password" name="password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input type="text" required [(ngModel)]="nombre" name="nombre"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Apellido</ion-label>
-      <ion-input type="text" required [(ngModel)]="apellido" name="apellido"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Nacimiento</ion-label>
-      <ion-input type="text" required [(ngModel)]="nacimiento" name="nacimiento"></ion-input>
-    </ion-item>
-  
-    <!-- Botón para enviar el formulario -->
-    <ion-button type="submit" expand="block">Registrar</ion-button>
-  
-    <!-- Botón opcional para resetear el formulario -->
-    <ion-button type="button" expand="block" (click)="registerForm.reset()">Limpiar</ion-button>
-  </form>
-</ion-content>
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+  <input type="text" name="username" ngModel required placeholder="Username">
+  <input type="password" name="password" ngModel required placeholder="Password">
+  <input type="text" name="nombre" ngModel required placeholder="Nombre">
+  <input type="text" name="apellido" ngModel required placeholder="Apellido">
+  <input type="text" name="nacimiento" ngModel required placeholder="Nacimiento">
+
+  <button type="submit" [disabled]="!registerForm.valid">Registrar</button>
+</form>
