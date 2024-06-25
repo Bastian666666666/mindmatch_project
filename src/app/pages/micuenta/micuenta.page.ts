@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DbserviceService } from 'src/app/services/dbservice.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-micuenta',
   templateUrl: './micuenta.page.html',

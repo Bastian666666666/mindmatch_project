@@ -21,12 +21,25 @@
     <ion-button type="submit" expand="block" class="btn-primary">Iniciar sesión</ion-button>
   </form>
 
-  <!-- Botón que lleva al home -->
+  <!-- Información del usuario admin -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información de Administrador</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Usuario admin: RoyB<br>
+      Contraseña: contra1234
+    </ion-card-content>
+  </ion-card>
 
+  <!-- Botón que lleva al home -->
   <ion-button fill="clear" routerLink="/register">¿No tienes cuenta? Regístrate aquí</ion-button>
   <ion-button fill="clear" routerLink="/home">Ir a Home</ion-button>
 
   <!-- Círculo que gira de Angular Material -->
   <!-- Asegúrate de que Angular Material esté correctamente integrado en tu proyecto -->
-  <mat-spinner></mat-spinner>
+  <div class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+
 </ion-content>
