@@ -19,6 +19,7 @@ export class AdminModificarPage implements OnInit {
 
 
   //Ojo habiaa agregado ! en lugar de ? en el constructor y no me dejaba pasar los datos
+  //Verifica que existen los datos antes de asignarlos y si existen los asigna a cada variable de arriba
   constructor(private router: Router, private activedroute: ActivatedRoute, private dbservice: DbserviceService) { 
   this.activedroute.queryParams.subscribe(param => {
     if (this.router.getCurrentNavigation()?.extras.state) {
@@ -32,6 +33,7 @@ export class AdminModificarPage implements OnInit {
   })
 }
 
+//Actualiza la informacion del usuario (redirige a la pagina de adminhome)
 editar() {
   this.dbservice.updateUsuario(this.id, this.username, this.password, this.nombre, this.apellido, this.nacimiento);
   this.dbservice.presentToast("Usuario modificado");

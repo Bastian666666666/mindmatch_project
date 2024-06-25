@@ -12,8 +12,13 @@ import { NavigationExtras } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
+  //Variables para comprobar el inicio de sesion
   usernameLog: string = "";
   passwordLog: string = "";
+
+  //Variable para el spinner
+  loading = false;
+
 
   constructor(private dbservice: DbserviceService, private router: Router) { }
 
@@ -61,4 +66,10 @@ export class LoginPage implements OnInit {
   presentAlert(arg0: string) {
     throw new Error('Method not implemented.');
   }
+
+  showSpinner() {
+    this.loading = true;
+    // Aquí puedes añadir cualquier otra lógica necesaria para el registro
+  }
+  
 }

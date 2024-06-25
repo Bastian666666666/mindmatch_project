@@ -12,17 +12,17 @@ export class RegisterPage implements OnInit {
   constructor(private dbService: DbserviceService) { }
 
   ngOnInit() {
-    // Aquí puedes agregar cualquier inicialización que tu componente necesite.
+    // inicialización.
   }
 
   onSubmit(form: NgForm) {
     const { username, password, nombre, apellido, nacimiento } = form.value;
     this.dbService.addUsuario(username, password, nombre, apellido, nacimiento).then(() => {
       console.log('Usuario registrado con éxito');
-      // Aquí puedes agregar lógica adicional, como redirigir al usuario o mostrar un mensaje de éxito.
+      // Aquí arriba puedo agregar algo como mensaje de exito.
     }).catch(error => {
       console.error('Error al registrar el usuario:', error);
-      // Manejar el error, por ejemplo, mostrando un mensaje al usuario.
+      // para manejar el error, por ejemplo, mostrando un mensaje al usuario.
     });
   }
 

@@ -7,6 +7,8 @@ import { ApiclientService } from '../../services/apiclient.service';
   styleUrls: ['./apiconsumo.component.scss'],
 })
 export class ApiconsumoComponent implements OnInit {
+
+  //Lista que se va a mostrar en la vista con los elementos de mi api
   lista: any[] = [];
 
   constructor(private apiClientService: ApiclientService) { }
@@ -15,10 +17,11 @@ export class ApiconsumoComponent implements OnInit {
     this.cargarLista();
   }
 
+// Esta función consume la data de mi nueva api
   cargarLista(): void {
     this.apiClientService.getLista().subscribe((data: any) => {
-      //Aqui llama a la lista de criterios lista_trastornos (el nombre que tiene en el json)
-      this.lista = data.listatrastornos;
+      // Consume la data de mi nueva api
+      this.lista = data;
     });
   }
 }

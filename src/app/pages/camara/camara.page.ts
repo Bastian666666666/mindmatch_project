@@ -31,7 +31,7 @@ export class CamaraPage implements OnInit {
     allowEditing: false, //cambie a false para que no se pueda editar la imagen
     resultType: CameraResultType.DataUrl //cambie a DataUrl para que se muestre la imagen
   });
-  // Can be set to the src of an image now
+  
   this.imageSource = image.dataUrl; //cambie a dataUrl para que se muestre la imagen, le digo que la imagen que se tomo se muestre en la variable imageSource
 };
 

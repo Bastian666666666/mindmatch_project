@@ -23,3 +23,10 @@ ion-content {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Esto hace que el contenedor tenga el alto de la ventana */
+  }

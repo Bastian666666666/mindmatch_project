@@ -11,10 +11,10 @@ import { DbserviceService } from 'src/app/services/dbservice.service';
 })
 export class ResultadoPage implements OnInit, AfterViewInit {
   username: string = "";
-  mensaje: string = ''; // El mensaje
+  mensaje: string = ''; // El mensaje de resultado que contrasta con el mensaje de la página anterior
 
   @ViewChildren(IonCard, { read: ElementRef }) cardElements!: QueryList<ElementRef<HTMLIonCardElement>>;
-  private animation!: Animation; // Asegúrate de que el tipo sea Animation
+  private animation!: Animation; 
 
   constructor(private dbservice: DbserviceService, private router: Router, private route: ActivatedRoute, private animationCtrl: AnimationController) { }
 
