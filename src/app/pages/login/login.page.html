@@ -1,12 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <!-- Título -->
-    <!-- LOGO: Cree una clase llamada "logo" para disminuir su tamaño en el scss -->
-    <img src="assets/img/mindmatch-logo.png" alt="Logo de la aplicación" class="logo">
-  </ion-toolbar>
+<!--
+<ion-header>
 </ion-header>
+-->
 
 <ion-content [fullscreen]="true">
+  <!-- Logo colocado más abajo en la página -->
+  <div class="logo-container">
+    <img src="assets/img/mindmatch-logo.png" alt="Logo de la aplicación" class="logo">
+  </div>
+
   <!-- CAMPOS PARA RELLENAR -->
   <form (ngSubmit)="login()">
     <ion-item>

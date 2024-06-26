@@ -14,8 +14,14 @@ ion-item {
 }
 
 .logo {
-  width: 100px; // Ajusta el tamaño del logo
-  height: auto; // Mantiene la proporción del logo
+  max-width: 100px; /* Ajusta esto según sea necesario */
+  height: auto; /* Mantiene la proporción del logo */
+  display: block; /* Centra el logo si es necesario */
+  margin: 0 auto; /* Centra el logo horizontalmente */
+}
+
+.logo-container {
+  margin-top: 20px; /* Ajusta este valor según necesites */
 }
 
 ion-content {
