@@ -1,3 +1,18 @@
+ion-header {
+  --ion-background-color: transparent;
+  --background: transparent;
+}
+
+ion-toolbar {
+  --ion-background-color: transparent;
+  --background: transparent;
+}
+
+ion-item {
+  --background: transparent; // Hace el fondo de los items transparente
+  --ion-background-color: transparent; // Para versiones más nuevas de Ionic
+}
+
 .logo {
   max-width: 100px; /* Ajusta esto según sea necesario */
   height: auto; /* Mantiene la proporción del logo */
@@ -5,28 +20,91 @@
   margin: 0 auto; /* Centra el logo horizontalmente */
 }
 
+.logo-container {
+  margin-top: 20px; /* Ajusta este valor según necesites */
+}
+
 ion-content {
-  padding-top: 20px; /* Ajusta el espacio entre el header y el contenido */
+  --background: none; // Elimina el color de fondo predeterminado si es necesario
+  background-color: #0093E9; // Establece el color de fondo sólido
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); // Aplica el degradado
+  padding-top: 20px; // Mantiene el ajuste de espacio existente
 }
 
-  //Campos de texto para completar
-  ion-input.input-rosa {
-    --placeholder-color: orange;
-    --color: rgb(81, 197, 255);
+// Campos de texto para completar
+ion-input.input-rosa {
+  --placeholder-color: orange;
+  --color: rgb(81, 197, 255);
 }
 
-  //Boton
-  .boton-morado {
-    --background: rgb(115, 174, 230);
-    --color: white;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+// Botón
+.boton-morado {
+  --background: rgb(115, 174, 230);
+  --color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .spinner-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Esto hace que el contenedor tenga el alto de la ventana */
-  }
+.spinner-container {
+  display: flex;
+  justify-content: center;
+}
+
+// BOTONES
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+//Separar logo de formulario
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 100%; /* Ajusta este valor según necesites */
+  max-width: 600px; /* Ajusta este valor para establecer un ancho máximo */
+  margin-top: 30px; /* Espacio entre la imagen y el formulario */
+  padding: 20px; /* Aumenta el padding para dar más espacio alrededor del contenido del formulario */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container {
+  text-align: center; /* Asegura que el logo también esté centrado */
+}
+
