@@ -1,36 +1,52 @@
 <ion-content [fullscreen]="true">
+  
   <div class="ion-text-center">
     <img src="assets/img/mindmatch-logo.png" alt="Logo de la aplicación" class="logo">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </div>
 
   <!-- Formulario de registro -->
-  <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
-    <mat-form-field appearance="fill">
-      <mat-label>Username</mat-label>
-      <input matInput name="username" ngModel required>
-    </mat-form-field>
+  <div class="form-container">
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput name="username" ngModel required>
+        </mat-form-field>
+      </p>
+  
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" name="password" ngModel required>
+        </mat-form-field>
+      </p>
+  
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" name="nombre" ngModel required>
+        </mat-form-field>
+      </p>
+  
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Apellido</mat-label>
+          <input matInput type="text" name="apellido" ngModel required>
+        </mat-form-field>
+      </p>
+  
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Nacimiento</mat-label>
+          <input matInput type="text" name="nacimiento" ngModel required>
+        </mat-form-field>
+      </p>
+  
+      <p>
+        <button mat-flat-button color="primary" type="submit" [disabled]="!registerForm.valid">Registrar</button>
+      </p>
+    </form>
+  </div>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Password</mat-label>
-      <input matInput type="password" name="password" ngModel required>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Nombre</mat-label>
-      <input matInput type="text" name="nombre" ngModel required>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Apellido</mat-label>
-      <input matInput type="text" name="apellido" ngModel required>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Nacimiento</mat-label>
-      <input matInput type="text" name="nacimiento" ngModel required>
-    </mat-form-field>
-
-    <button mat-flat-button color="primary" type="submit" [disabled]="!registerForm.valid">Registrar</button>
-  </form>
 </ion-content>
