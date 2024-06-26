@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 //Implemento el db service y el router, el primero para logear y el segundo (aun no usado)
 import { DbserviceService } from 'src/app/services/dbservice.service';
@@ -15,9 +15,6 @@ export class LoginPage implements OnInit {
   //Variables para comprobar el inicio de sesion
   usernameLog: string = "";
   passwordLog: string = "";
-
-  //Variable para el spinner
-  loading = false;
 
 
   constructor(private dbservice: DbserviceService, private router: Router) { }
@@ -40,7 +37,7 @@ export class LoginPage implements OnInit {
   }
     */
 
-  //TODO Segundo intento de login
+  //TODO Segundo intento de login: oficial
   async login() {
     const usuario = await this.dbservice.validarUsuario(this.usernameLog, this.passwordLog);
     if (usuario) {
@@ -67,9 +64,4 @@ export class LoginPage implements OnInit {
     throw new Error('Method not implemented.');
   }
 
-  showSpinner() {
-    this.loading = true;
-    // Aquí puedes añadir cualquier otra lógica necesaria para el registro
-  }
-  
 }

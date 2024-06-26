@@ -3,35 +3,38 @@
 </ion-header>
 -->
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="content-container">
   <!-- Logo colocado más abajo en la página -->
   <div class="logo-container">
     <img src="assets/img/mindmatch-logo.png" alt="Logo de la aplicación" class="logo">
   </div>
 
-  <!-- CAMPOS PARA RELLENAR -->
-  <form (ngSubmit)="login()">
-    <ion-item>
-      <ion-label position="floating">Usuario:</ion-label>
-      <ion-input type="text" [(ngModel)]="usernameLog" name="username" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Contraseña:</ion-label>
-      <ion-input type="password" [(ngModel)]="passwordLog" name="password" required></ion-input>
-    </ion-item>
-    <ion-button type="submit" expand="block" class="btn-primary">Iniciar sesión</ion-button>
-  </form>
-
-  <!-- Información del usuario admin -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Información de Administrador</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Usuario admin: RoyB<br>
-      Contraseña: contra1234
-    </ion-card-content>
-  </ion-card>
+  <!-- Contenedor para centrar el formulario -->
+  <div class="form-container">
+    <!-- CAMPOS PARA RELLENAR -->
+    <form (ngSubmit)="login()">
+      <p>
+        <mat-divider></mat-divider>
+        <mat-form-field appearance="fill">
+          <mat-label>Usuario:</mat-label>
+          <input matInput [(ngModel)]="usernameLog" name="username" required placeholder="Usuario">
+          <mat-icon matSuffix>account_circle</mat-icon>
+          <mat-hint>Introduce tu nombre de usuario</mat-hint>
+        </mat-form-field>
+      </p>
+    
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña:</mat-label>
+          <input matInput [(ngModel)]="passwordLog" name="password" required placeholder="Contraseña" type="password">
+          <mat-icon matSuffix>lock</mat-icon>
+          <mat-hint>Introduce tu contraseña</mat-hint>
+        </mat-form-field>
+      </p>
+    
+      <button mat-flat-button color="primary" type="submit">Iniciar sesión</button>
+    </form>
+  </div>
 
   <!-- Botón que lleva al home -->
   <ion-button fill="clear" routerLink="/register">¿No tienes cuenta? Regístrate aquí</ion-button>
@@ -42,5 +45,4 @@
   <div class="spinner-container">
     <mat-spinner></mat-spinner>
   </div>
-
 </ion-content>

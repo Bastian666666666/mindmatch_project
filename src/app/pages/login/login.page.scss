@@ -50,3 +50,61 @@ ion-input.input-rosa {
   display: flex;
   justify-content: center;
 }
+
+// BOTONES
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+//Separar logo de formulario
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 100%; /* Ajusta este valor según necesites */
+  max-width: 600px; /* Ajusta este valor para establecer un ancho máximo */
+  margin-top: 30px; /* Espacio entre la imagen y el formulario */
+  padding: 20px; /* Aumenta el padding para dar más espacio alrededor del contenido del formulario */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container {
+  text-align: center; /* Asegura que el logo también esté centrado */
+}
+
