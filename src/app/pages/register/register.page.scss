@@ -1,3 +1,97 @@
+/* Ajustes para el logo y contenedores, si son necesarios */
 .logo {
-    transform: scale(0.5);
-  }
+  max-width: 100px; /* Ajusta esto según sea necesario */
+  height: auto; /* Mantiene la proporción del logo */
+  display: block; /* Centra el logo si es necesario */
+  margin: 0 auto 30px; /* Centra el logo horizontalmente y añade espacio debajo */
+}
+
+/* Aumentar el espacio entre el logo y el formulario */
+.content-container, .form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px; /* Ajustado para hacer los campos de texto más anchos */
+  margin-top: 30px; /* Aumentado para más espacio entre el logo y el formulario */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos adicionales para mantener la coherencia con el login */
+ion-header, ion-toolbar, ion-item {
+  --ion-background-color: transparent;
+  --background: transparent;
+}
+
+ion-content {
+  --background: none;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  padding-top: 20px;
+}
+
+/* Campos de texto personalizados */
+ion-input.input-rosa {
+  --placeholder-color: orange;
+  --color: rgb(81, 197, 255);
+}
+
+/* Botón personalizado */
+.boton-morado {
+  --background: rgb(115, 174, 230);
+  --color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ajustes adicionales para botones y contenedores */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+/* Separar logo de formulario */
+.logo-container {
+  text-align: center; /* Asegura que el logo también esté centrado */
+  margin-top: 20px; /* Ajusta este valor según necesites */
+}
