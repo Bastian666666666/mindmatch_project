@@ -4,53 +4,51 @@ ion-header {
 }
 
 ion-toolbar {
-  --background: transparent; /* Asegura que el fondo de la toolbar sea transparente */
+  --background: transparent;
   display: flex;
-  justify-content: center; /* Centra el contenido de la toolbar */
-  align-items: center; /* Alinea verticalmente */
-  padding: 10px 0; /* Agrega un poco de espacio arriba y abajo del toolbar */
-  border: none; /* Elimina cualquier borde que pueda estar presente */
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  border: none;
 }
 
 ion-item {
-  --background: transparent; /* Hace el fondo de los items transparente */
-  --ion-background-color: transparent; /* Para versiones más nuevas de Ionic */
+  --background: transparent;
+  --ion-background-color: transparent;
 }
 
 .logo {
-  max-width: 100px; /* Mantiene el ajuste de tamaño */
-  height: auto; /* Mantiene la proporción del logo */
-  display: block; /* Mantiene el logo centrado */
-  margin: 0 auto; /* Mantiene el logo centrado horizontalmente */
-  margin-bottom: 30px; /* Añade espacio debajo del logo */
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .logo-container, .ion-buttons {
   background: transparent;
-  border: none; /* Elimina bordes si los hay */
+  border: none;
 }
 
 ion-content {
-  --background: none; /* Mantiene la eliminación del color de fondo predeterminado */
-  background-color: #0093E9; /* Mantiene el color de fondo sólido */
-  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); /* Mantiene el degradado */
-  padding-top: 40px; /* Aumenta el espacio en la parte superior */
+  --background: none;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  padding-top: 40px;
 }
 
-/* Campos de texto para completar */
 ion-input.input-rosa {
   --placeholder-color: orange;
   --color: rgb(81, 197, 255);
 }
 
-/* Botón */
 .boton-morado {
-  --background: rgb(115, 174, 230); /* Mantiene el color de fondo */
-  --color: white; /* Mantiene el color del texto */
-  display: block; /* Mantiene el bloque de estilo */
-  margin-left: auto; /* Mantiene el margen izquierdo */
-  margin-right: auto; /* Asegura que el botón esté centrado */
-  margin-bottom: 20px; /* Añade espacio debajo de cada botón */
+  --background: rgb(115, 174, 230);
+  --color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 }
 
 .spinner-container {
@@ -58,26 +56,29 @@ ion-input.input-rosa {
   justify-content: center;
 }
 
-/* BOTONES */
-
 section {
-  display: table;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .example-label {
-  display: table-cell;
   font-size: 14px;
   margin-left: 8px;
   min-width: 120px;
 }
 
 .example-button-row {
-  display: table-cell;
-  max-width: 600px;
+  display: flex;
+  flex-direction: column; /* Cambia de row a column */
+  align-items: center; /* Asegura que los elementos estén centrados horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente, útil si el contenedor tiene altura definida */
 }
 
-.example-button-row .mat-mdc-button-base {
-  margin: 8px 8px 8px 0;
+.mat-mdc-button-base {
+  margin: 8px;
+  min-width: 160px;
 }
 
 .example-flex-container {
@@ -89,10 +90,8 @@ section {
 .example-button-container {
   display: flex;
   justify-content: center;
-  width: 120px;
+  flex-grow: 1;
 }
-
-/* Separar logo de formulario */
 
 .content-container {
   display: flex;
@@ -102,17 +101,13 @@ section {
 }
 
 .form-container {
-  width: 100%; /* Ajusta este valor según necesites */
-  max-width: 600px; /* Ajusta este valor para establecer un ancho máximo */
-  margin-top: 30px; /* Espacio entre la imagen y el formulario */
-  padding: 20px; /* Aumenta el padding para dar más espacio alrededor del contenido del formulario */
+  width: 100%;
+  max-width: 600px;
+  margin-top: 30px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.logo-container {
-  text-align: center; /* Asegura que el logo también esté centrado */
 }
 
 .logout-button-container {
@@ -122,17 +117,20 @@ section {
   z-index: 1000;
 }
 
-/* Estilos para hacer los botones más pequeños y redondeados */
 ion-button {
-  --border-radius: 20px; /* Ajusta el radio del borde para redondear los botones */
-  --height: 40px; /* Altura más pequeña */
-  --padding-start: 20px; /* Padding izquierdo */
-  --padding-end: 20px; /* Padding derecho */
+  --border-radius: 20px;
+  --height: 40px;
+  --padding-start: 20px;
+  --padding-end: 20px;
 }
 
 .username-display {
   position: absolute;
   right: 0;
-  padding-right: 10px; /* Asegura un poco de espacio a la derecha */
+  padding-right: 10px;
   font-size: 16px;
+}
+
+section button mat-icon {
+  color: #00BFFF; /* Color celeste */
 }
