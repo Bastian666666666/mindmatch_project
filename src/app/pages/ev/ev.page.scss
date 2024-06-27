@@ -1,0 +1,152 @@
+ion-header {
+  --ion-background-color: transparent;
+  --background: transparent;
+}
+
+ion-toolbar {
+  --background: transparent;
+  display: flex;
+  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+  align-items: center;
+  padding: 10px; /* Ajusta según sea necesario */
+  border: none;
+}
+
+ion-item {
+  --background: transparent;
+  --ion-background-color: transparent;
+  border-bottom: 1px solid #ffffff50; /* Añade un borde inferior sutil a cada ion-item */
+}
+
+.checkbox-naranja {
+  --background-checked: orange;
+  --border-color: orange;
+}
+
+.logo {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.logo-container, .ion-buttons {
+  background: transparent;
+  border: none;
+}
+
+ion-content {
+  --background: none;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  padding-top: 40px;
+}
+
+ion-input.input-rosa {
+  --placeholder-color: orange;
+  --color: rgb(81, 197, 255);
+}
+
+.boton-morado {
+  --background: rgb(115, 174, 230);
+  --color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.example-label {
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-mdc-button-base {
+  margin: 8px;
+  min-width: 160px;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logout-button-container {
+  text-align: center; /* Centra el botón en el contenedor */
+  padding: 20px 0; /* Agrega algo de espacio alrededor del botón */
+  /* No uses position: fixed o position: absolute aquí */
+}
+
+ion-button {
+  --border-radius: 20px;
+  --height: 40px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+}
+
+.username-display {
+  position: absolute;
+  right: 0;
+  padding-right: 10px;
+  font-size: 16px;
+}
+
+section button mat-icon {
+  color: #00BFFF;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.edad-formulario {
+  display: flex;
+  justify-content: center;
+}
