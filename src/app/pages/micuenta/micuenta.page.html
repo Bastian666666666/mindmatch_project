@@ -14,21 +14,21 @@
     <p>No hay imagen de perfil disponible.</p>
   </ng-template>
 
-  <ion-list>
-    <ion-button class="boton-morado" expand="full" routerLink="/camara">Ir a la Cámara</ion-button>
-    <ion-button class="boton-morado" expand="full" routerLink="/home">Volver a Home</ion-button>
-  </ion-list>
+  <div class="ion-margin-vertical">
+    <button mat-flat-button color="primary" routerLink="/camara">Ir a la Cámara</button>
+  </div>
+  <div class="ion-margin-vertical">
+    <button mat-flat-button color="primary" routerLink="/home">Volver a Home</button>
+  </div>
 
+  <p>Criterios en funcionamiento:</p>
   <app-apiconsumo></app-apiconsumo>
-</ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons slot="end" class="boton-salir">
-      <ion-button (click)="logout()">
-        <ion-icon name="exit-outline"></ion-icon>
-        Cerrar sesión
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
+  <ion-buttons slot="end" class="boton-salir">
+    <ion-button (click)="logout()">
+      <ion-icon name="exit-outline"></ion-icon>
+      Cerrar sesión
+    </ion-button>
+  </ion-buttons>
+
+</ion-content>
