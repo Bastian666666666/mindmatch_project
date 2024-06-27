@@ -1,3 +1,160 @@
+ion-header {
+  --ion-background-color: transparent;
+  --background: transparent;
+}
+
+ion-toolbar {
+  --background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  border: none;
+}
+
+ion-item {
+  --background: transparent;
+  --ion-background-color: transparent;
+}
+
+.logo {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.logo-container, .ion-buttons {
+  background: transparent;
+  border: none;
+}
+
+ion-content {
+  --background: none;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  padding-top: 40px;
+}
+
+ion-input.input-rosa {
+  --placeholder-color: orange;
+  --color: rgb(81, 197, 255);
+}
+
+.boton-morado {
+  --background: rgb(115, 174, 230);
+  --color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.example-label {
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-mdc-button-base {
+  margin: 8px;
+  min-width: 160px;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logout-button-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+ion-button {
+  --border-radius: 20px;
+  --height: 40px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+}
+
+.username-display {
+  position: absolute;
+  right: 0;
+  padding-right: 10px;
+  font-size: 16px;
+}
+
+section button mat-icon {
+  color: #00BFFF; /* Color celeste */
+}
+
+//Esto es para los botones de play, pause y stop
+  .big-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .big-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .big-button:hover {
+    background-color: #0056b3;
+  }
 .big-button {
     padding: 15px 30px;
     font-size: 20px;
@@ -10,4 +167,9 @@
   
   .big-button:hover {
     background-color: #0056b3;
+  }
+
+  ion-card {
+    background-image: linear-gradient(to bottom, #d9d7d7, #abe2ff); /* De blanco (#ffffff) a blanco azulado (#f0f8ff) */
+    color: #000; /* Asegurando que el texto sea legible */
   }
