@@ -1,0 +1,50 @@
+ion-content {
+    --background: none;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    padding-top: 40px;
+  }
+  
+  .logo {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  
+  .boton-morado {
+    --background: rgb(115, 174, 230);
+    --color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  
+  ion-input.input-rosa {
+    --placeholder-color: orange;
+    --color: rgb(81, 197, 255);
+  }
+  
+  .logout-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .username-display {
+    position: absolute;
+    right: 0;
+    padding-right: 10px;
+    font-size: 16px;
+  }
+  
+  ion-button {
+    --border-radius: 20px;
+    --height: 40px;
+    --padding-start: 20px;
+    --padding-end: 20px;
+  }
+  

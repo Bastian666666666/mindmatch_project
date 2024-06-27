@@ -9,52 +9,35 @@
     </ion-buttons>
   </ion-toolbar>
 
-  <ion-toolbar>
-    <ion-title size="large">tutorial</ion-title>
-  </ion-toolbar>
-
   <p>Bienvenido/a a nuestra aplicación de criterios diagnósticos en psicología. Aquí te guiaré paso a paso sobre cómo utilizarla efectivamente para evaluar diferentes condiciones psicológicas.</p>
 
-  <mat-card>
-    <mat-card-header>Paso 1: Ingresar a los Criterios Diagnósticos </mat-card-header>
-    <mat-card-content>Haz clic en el botón "Criterios Diagnósticos" para comenzar. Este paso te llevará a la sección donde podrás ingresar la información necesaria para la evaluación.</mat-card-content>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-header>Paso 2: Ingresar Edad </mat-card-header>
-    <mat-card-content>Es importante ingresar la edad del individuo que está siendo evaluado. Algunos criterios pueden variar dependiendo de la edad, y esto asegurará una evaluación precisa.</mat-card-content>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-header>Paso 3: Seleccionar Síntomas En esta sección</mat-card-header>
-    <mat-card-content>Encontrarás una lista de síntomas representados por casillas de verificación. Selecciona aquellos síntomas que el individuo haya experimentado durante el período de tiempo especificado (por ejemplo, los últimos 6 meses). Puedes deseleccionar un síntoma si es necesario.</mat-card-content>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-header>Paso 4: Ver Resultados</mat-card-header>
-    <mat-card-content>Una vez que hayas seleccionado los síntomas pertinentes, haz clic en el botón "Ver Resultados". La aplicación determinará si el individuo cumple con los criterios diagnósticos para ciertas condiciones psicológicas.</mat-card-content>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-header><p>Paso 5: ¿Que significan los resultados?</p></mat-card-header>
-    <mat-card-content>
-      <span class="cumple">Cumple:</span> 
-      <p>Si el individuo cumple con los criterios diagnósticos, se le proporcionará una breve explicación sobre la condición diagnosticada y posibles tratamientos.</p>
-      <img mat-card-image src="assets/img/avecheck.png"> 
-
-      <span class="no-cumple">No Cumple:</span> 
-      <p>Si el individuo no cumple con los criterios diagnósticos, se indicará que no se ha encontrado evidencia suficiente para el diagnóstico.</p>
-      <img mat-card-image src="assets/img/aveequis.png"> 
-
-      <span class="no-evaluable">No se puede Evaluar:</span> 
-      <p>En algunos casos, puede ser difícil evaluar debido a especificidades como la edad. En estos casos, se indicará que la evaluación no se puede completar debido a estas limitaciones.</p>
-      <img mat-card-image src="assets/img/aveinterrogacion.png"> 
-    </mat-card-content>
-  </mat-card>
-
-  <ion-card #card>
-    <ion-card-content>¡Listo! Con estos pasos, podrás utilizar nuestra aplicación para realizar evaluaciones precisas de criterios diagnósticos en psicología.</ion-card-content>
-  </ion-card>
+  <h2>Paso 1: Ingresar a los Criterios Diagnósticos </h2>
+  <p>Haz clic en el botón "Criterios Diagnósticos" para comenzar. Este paso te llevará a la sección donde podrás ingresar la información necesaria para la evaluación.</p>
+  
+  <h2>Paso 2: Ingresar Edad </h2>
+  <p>Es importante ingresar la edad del individuo que está siendo evaluado. Algunos criterios pueden variar dependiendo de la edad, y esto asegurará una evaluación precisa.</p>
+  
+  <h2>Paso 3: Seleccionar Síntomas En esta sección</h2>
+  <p>Encontrarás una lista de síntomas representados por casillas de verificación. Selecciona aquellos síntomas que el individuo haya experimentado durante el período de tiempo especificado (por ejemplo, los últimos 6 meses). Puedes deseleccionar un síntoma si es necesario.</p>
+  
+  <h2>Paso 4: Ver Resultados</h2>
+  <p>Una vez que hayas seleccionado los síntomas pertinentes, haz clic en el botón "Ver Resultados". La aplicación determinará si el individuo cumple con los criterios diagnósticos para ciertas condiciones psicológicas.</p>
+  
+  <h2>Paso 5: ¿Que significan los resultados?</h2>
+  <span class="cumple">Cumple:</span> 
+  <p>Si el individuo cumple con los criterios diagnósticos, se le proporcionará una breve explicación sobre la condición diagnosticada y posibles tratamientos.</p>
+  <img src="assets/img/avecheck.png"> 
+  
+  <span class="no-cumple">No Cumple:</span> 
+  <p>Si el individuo no cumple con los criterios diagnósticos, se indicará que no se ha encontrado evidencia suficiente para el diagnóstico.</p>
+  <img src="assets/img/aveequis.png"> 
+  
+  <span class="no-evaluable">No se puede Evaluar:</span> 
+  <p>En algunos casos, puede ser difícil evaluar debido a especificidades como la edad. En estos casos, se indicará que la evaluación no se puede completar debido a estas limitaciones.</p>
+  <img src="assets/img/aveinterrogacion.png"> 
+  
+  <h2>¡Listo!</h2>
+  <p>Con estos pasos, podrás utilizar nuestra aplicación para realizar evaluaciones precisas de criterios diagnósticos en psicología.</p>
   
   <ion-button (click)="play()">Play</ion-button>
   <ion-button (click)="pause()">Pause</ion-button>
