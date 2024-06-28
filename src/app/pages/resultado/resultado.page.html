@@ -1,22 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>RESULTADOS</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">resultados</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <!-- Botones para activar y desactivar la animación 
-  <ion-button (click)="play()">Play</ion-button>
-  <ion-button (click)="pause()">Pause</ion-button>
-  <ion-button (click)="stop()">Stop</ion-button>-->
-
-  <!-- Aquí es donde se mostrará el mensaje y el usuario -->
   <ion-card>
     <ion-card-content>
       <p>Estimado {{ username }},</p>
@@ -25,9 +7,8 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- **Mensaje e imagen para "invalido300.02" -->
   <ion-card *ngIf="mensaje == 'invalido300.02'">
-    <img alt="Imagen descriptiva" src="assets/img/interrogativo.png" />
+    <img alt="Imagen descriptiva" src="assets/img/aveinterrogacion.png" />
     <ion-card-header>
       <ion-card-title>No se puede evaluar con los criterios para Trastorno de ansiedad generalizada</ion-card-title>
       <ion-card-subtitle>300.02 (F41.1)</ion-card-subtitle>
@@ -38,9 +19,8 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- **Mensaje e imagen para "positivo300.02" -->
   <ion-card *ngIf="mensaje == 'positivo300.02'">
-    <img alt="Imagen descriptiva" src="assets/img/positivo.png" />
+    <img alt="Imagen descriptiva" src="assets/img/avecheck.png" />
     <ion-card-header>
       <ion-card-title>Cumple con los criterios para Trastorno de ansiedad generalizada</ion-card-title>
       <ion-card-subtitle>300.02 (F41.1)</ion-card-subtitle>
@@ -62,9 +42,8 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- **Mensaje e imagen para "negativo300.02" -->
   <ion-card *ngIf="mensaje == 'negativo300.02'">
-    <img alt="Imagen descriptiva" src="assets/img/negativo.png" />
+    <img alt="Imagen descriptiva" src="assets/img/aveequis.png" />
     <ion-card-header>
       <ion-card-title>No cumple con los criterios para Trastorno de ansiedad generalizada</ion-card-title>
       <ion-card-subtitle>300.02 (F41.1)</ion-card-subtitle>
