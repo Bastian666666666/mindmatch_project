@@ -7,6 +7,14 @@
     <img src="assets/img/mindmatch-logo.png" alt="Logo de la aplicación" class="logo">
   </div>
 
+  <!-- Agregar imagen del avatar aquí -->
+  <div class="ion-text-center" *ngIf="avatarUrl">
+    <img [src]="avatarUrl" alt="Avatar del usuario">
+    <!-- Botón para eliminar el avatar -->
+    <ion-button color="danger" (click)="removeUserAvatar()">Eliminar Avatar</ion-button>
+  </div>
+
+  <!-- Asegurarse de que el mensaje solo se muestre cuando no hay imagen de perfil -->
   <div *ngIf="profileImage; else noImage">
     <img [src]="profileImage" alt="Imagen de perfil">
   </div>
@@ -25,10 +33,5 @@
   <app-apiconsumo></app-apiconsumo>
 
   <ion-buttons slot="end" class="boton-salir">
-    <ion-button (click)="logout()">
-      <ion-icon name="exit-outline"></ion-icon>
-      Cerrar sesión
-    </ion-button>
   </ion-buttons>
-
 </ion-content>
