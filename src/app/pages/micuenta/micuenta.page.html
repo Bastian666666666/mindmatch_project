@@ -7,27 +7,24 @@
     <img src="assets/img/mindmatch-logo.png" alt="Logo de la aplicación" class="logo">
   </div>
 
-  <!-- Agregar imagen del avatar aquí -->
+  <!-- Contenedor centrado para la imagen del avatar y el botón de eliminar -->
   <div class="ion-text-center" *ngIf="avatarUrl">
-    <img [src]="avatarUrl" alt="Avatar del usuario">
-    <!-- Botón para eliminar el avatar -->
-    <ion-button color="danger" (click)="removeUserAvatar()">Eliminar Avatar</ion-button>
+    <img [src]="avatarUrl" alt="Avatar del usuario" style="width: 100px;"> <!-- Imagen del avatar -->
+    <br> <!-- Añade un salto de línea para separar la imagen del botón -->
+    <ion-button color="danger" (click)="removeUserAvatar()">Eliminar Avatar</ion-button> <!-- Botón para eliminar el avatar -->
   </div>
 
-  <!-- Asegurarse de que el mensaje solo se muestre cuando no hay imagen de perfil -->
-  <div *ngIf="profileImage; else noImage">
-    <img [src]="profileImage" alt="Imagen de perfil">
-  </div>
-  <ng-template #noImage>
-    <p>No hay imagen de perfil disponible.</p>
-  </ng-template>
-
-  <div class="ion-margin-vertical">
+ <!-- Nuevo contenedor para ambos botones con clase para aplicar estilos -->
+<div class="buttons-container">
+  <!-- Contenedor centrado para el botón Ir a la Cámara -->
+  <div class="ion-text-center button-spacing">
     <button mat-flat-button color="primary" routerLink="/camara">Ir a la Cámara</button>
   </div>
-  <div class="ion-margin-vertical">
+  <!-- Contenedor centrado para el botón Volver a Home -->
+  <div class="ion-text-center">
     <button mat-flat-button color="primary" routerLink="/home">Volver a Home</button>
   </div>
+</div>
 
   <p>Criterios en funcionamiento:</p>
   <app-apiconsumo></app-apiconsumo>

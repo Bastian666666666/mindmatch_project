@@ -1,0 +1,37 @@
+ion-header {
+    --ion-background-color: transparent;
+    --background: transparent;
+  }
+  
+  ion-toolbar {
+    --ion-background-color: transparent;
+    --background: transparent;
+  }
+  
+  ion-content {
+    --background: none;
+    background-color: #0093E9; /* Color de fondo sólido */
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); /* Degradado de fondo */
+  }
+  
+  #container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Ajusta este valor según necesites */
+  }
+  
+  ion-button {
+    --background: rgb(115, 174, 230);
+    --color: white;
+    display: block;
+    margin: 20px auto; /* Centra el botón y añade margen */
+  }
+  
+  img {
+    max-width: 250px; /* Ajusta esto según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Centra la imagen si es necesario */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+  }

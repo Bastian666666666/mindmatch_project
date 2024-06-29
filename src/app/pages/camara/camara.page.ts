@@ -38,7 +38,6 @@ export class CamaraPage implements OnInit {
 
   savePicture = () => {
     this.avatarService.updateAvatar(this.username, this.imageSource); // Actualiza el avatar en el servicio con el nombre de usuario y la fuente de la imagen
-    alert('Foto guardada correctamente');
-    this.router.navigateByUrl('/micuenta');
-  };
+    this.router.navigateByUrl('/micuenta'); // Redirige al usuario a su cuenta
+};
 }
