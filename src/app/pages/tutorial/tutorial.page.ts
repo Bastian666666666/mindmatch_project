@@ -31,13 +31,17 @@ private animation!: Animation;
   }
 
   ngAfterViewInit() {
-    this.animation = this.animationCtrl
-      .create()
-      .addElement(this.card.nativeElement)
-      .duration(1500)
-      .iterations(Infinity)
-      .direction('alternate')
-      .fromTo('background', 'blue', 'var(--background)');
+    if (this.card && this.card.nativeElement) {
+      this.animation = this.animationCtrl
+        .create()
+        .addElement(this.card.nativeElement)
+        .duration(1500)
+        .iterations(Infinity)
+        .direction('alternate')
+        .fromTo('transform', 'translateX(0px)', 'translateX(100px)');
+    } else {
+      // Considera proporcionar un comportamiento alternativo o una simulación aquí para las pruebas
+    }
   }
 
   play() {
