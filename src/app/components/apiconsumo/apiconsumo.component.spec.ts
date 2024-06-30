@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { HttpClientTestingModule } from '@angular/common/http/testing'; // Importa HttpClientTestingModule
 
 import { ApiconsumoComponent } from './apiconsumo.component';
 
@@ -10,7 +11,10 @@ describe('ApiconsumoComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ApiconsumoComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [
+        IonicModule.forRoot(),
+        HttpClientTestingModule // Añade HttpClientTestingModule aquí
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ApiconsumoComponent);

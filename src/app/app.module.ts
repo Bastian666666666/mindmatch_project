@@ -9,10 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx'; // 1. Importa SQLite para usarlo en la aplicación
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'; // Importa provideAnimationsAsync que sirve para proveer animaciones asíncronas
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     SQLite, // 2. Provee SQLite para usarlo en la aplicación

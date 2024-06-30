@@ -24,7 +24,7 @@ import { MatDividerModule } from '@angular/material/divider'; //Para usar el com
     MatInputModule, // Importación necesaria para los inputs de Material
     MatIconModule, // Importación necesaria para los iconos de Material
     MatButtonModule, // Importación necesaria para los botones de Material
-    MatDividerModule // Importación necesaria para los divisores de Material
+    MatDividerModule, // Importación necesaria para los divisores de Material
   ],
   declarations: [RegisterPage]
 })
