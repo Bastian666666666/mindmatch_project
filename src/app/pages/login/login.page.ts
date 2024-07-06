@@ -22,21 +22,6 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-
-  //!Primero intento de login
-  /*
-  async login(username: string, password: string) {
-    const success = await this.dbservice.login(username, password);
-    if (success) {
-      // Aquí puedes redirigir al usuario a otra página o mostrar un mensaje de éxito
-      console.log('Inicio de sesión exitoso');
-    } else {
-      // Mostrar un mensaje de error
-      console.log('Error al iniciar sesión');
-    }
-  }
-    */
-
   //TODO Segundo intento de login: oficial
   async login() {
     const usuario = await this.dbservice.validarUsuario(this.usernameLog, this.passwordLog);
