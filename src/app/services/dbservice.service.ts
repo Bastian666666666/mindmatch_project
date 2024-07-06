@@ -36,32 +36,57 @@ export class DbserviceService {
 
 
   addUsuario(username: string, password: string, nombre: string, apellido: string, nacimiento: string) {
-    // Primero, verifica si el username ya existe
+    // Validaciones
+    const usernameRegex = /^[a-zA-Z0-9]{1,15}$/;
+    const passwordRegex = /^[a-zA-Z0-9]{5,30}$/; // Modificado para requerir al menos 5 caracteres
+    const nameRegex = /^[a-zA-Z]{1,30}$/;
+    const yearRegex = /^\d{4}$/;
+  
+    if (!usernameRegex.test(username)) {
+      this.presentToast('Username debe tener máximo 15 caracteres y solo puede contener números y letras.');
+      return Promise.reject('Validación de username fallida.');
+    }
+  
+    if (!password || !passwordRegex.test(password)) {
+      this.presentToast('Password debe tener entre 5 y 30 caracteres, sin espacios en blanco y solo números y letras.'); // Mensaje modificado
+      return Promise.reject('Validación de password fallida.');
+    }
+  
+    if (!nombre || !nameRegex.test(nombre)) {
+      this.presentToast('Nombre no puede ser nulo, debe tener un máximo de 30 caracteres y solo letras.');
+      return Promise.reject('Validación de nombre fallida.');
+    }
+  
+    if (!apellido || !nameRegex.test(apellido)) {
+      this.presentToast('Apellido no puede ser nulo, debe tener un máximo de 30 caracteres y solo letras.');
+      return Promise.reject('Validación de apellido fallida.');
+    }
+  
+    if (!yearRegex.test(nacimiento)) {
+      this.presentToast('Nacimiento debe ser un año válido de 4 dígitos.');
+      return Promise.reject('Validación de nacimiento fallida.');
+    }
+  
+    // Si pasa todas las validaciones, procede con la inserción
     return this.database.executeSql('SELECT * FROM usuario WHERE username = ?', [username])
       .then(res => {
         if (res.rows.length > 0) {
-          // Si ya existe un usuario con ese username, muestra un mensaje y detén la ejecución
           this.presentToast('El nombre de usuario ya existe. Por favor, elija otro.');
-          return Promise.reject('El nombre de usuario ya existe.'); // Detiene la ejecución y evita la inserción
+          return Promise.reject('El nombre de usuario ya existe.');
         } else {
-          // Si el username no existe, intenta insertar el nuevo usuario
           let data = [username, password, nombre, apellido, nacimiento];
           return this.database.executeSql('INSERT INTO usuario(username, password, nombre, apellido, nacimiento) VALUES(?, ?, ?, ?, ?)', data)
             .then(() => {
-              this.buscarUsuarios(); // Actualiza la lista de usuarios
+              this.buscarUsuarios();
               this.presentToast('Registro exitoso.');
             })
             .catch(error => {
-              // Aquí capturas el error de violación de la restricción UNIQUE, si ocurre
-              // El manejo específico del error dependerá del código de error que SQLite devuelve
-              // Este es un manejo genérico de error
               this.presentToast('Error al agregar usuario: ' + error.message);
               return Promise.reject(error);
             });
         }
       })
       .catch(error => {
-        // Manejo de errores generales de la consulta
         this.presentToast('Error al verificar el nombre de usuario: ' + error.message);
         return Promise.reject(error);
       });
