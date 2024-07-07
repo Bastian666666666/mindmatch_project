@@ -32,9 +32,7 @@ export class DbserviceService {
 
 
   //4. Esto es una función que agregará un usuario a la base de datos tomando como parámetros el username, la contraseña, el nombre, el apellido y la fecha de nacimiento y los insertará en usuario
-  //!Se perfecciono este metodo para que verifique si existe un usuario con el mismo nombre de usuario, si existe, no lo inserta y muestra un mensaje de error, pero al parecer el error esta en la parte inicial porque el error que arroja es de unknow desde .catch(error =>  no "El nombre de usuario ya existe.."
-
-
+  
   addUsuario(username: string, password: string, nombre: string, apellido: string, nacimiento: string) {
     // Validaciones
     const usernameRegex = /^[a-zA-Z0-9]{1,15}$/;

@@ -13,7 +13,7 @@ describe('TutorialPage', () => {
   const activatedRouteStub = {
     snapshot: {
       paramMap: {
-        get: () => 'default', // Simula el valor por defecto o necesario para tus pruebas
+        get: () => 'default', 
       },
     },
   };
@@ -25,7 +25,7 @@ describe('TutorialPage', () => {
       providers: [
         { provide: ActivatedRoute, useValue: activatedRouteStub },
         AnimationController,
-        // Aquí puedes agregar cualquier otro servicio que tu componente requiera
+        
       ],
     }).compileComponents();
 
@@ -38,5 +38,5 @@ describe('TutorialPage', () => {
     expect(component).toBeTruthy();
   });
 
-  // Aquí puedes agregar más pruebas según sea necesario
+  
 });
